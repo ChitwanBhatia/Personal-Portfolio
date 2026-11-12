@@ -8,11 +8,11 @@ export default function About() {
       {aboutText.map((p) => <p className="text" key={p}>{p}</p>)}
       <h3 className="h3">What I'm Doing</h3>
       <ul className="services">
-        {services.map((s) => (
-          <li className="service" key={s.title}>
-            <div className="service-icon">{s.icon}</div>
-            <h4>{s.title}</h4>
-            <p>{s.text}</p>
+        {services.map(({ title, text, icon: Icon }) => (
+          <li className="service" key={title}>
+            <div className="service-icon"><Icon aria-hidden="true" /></div>
+            <h4>{title}</h4>
+            <p>{text}</p>
           </li>
         ))}
       </ul>
